@@ -118,4 +118,4 @@ python3 scripts/build_release.py --source /path/to/original.iso --out build/
 感谢所有参与翻译、校对、术语考证、实机测试与问题反馈的贡献者，
 以及在 PS2 汉化领域公开工具与经验的同好。完整名单见 [贡献与致谢](CONTRIBUTING.md)。
 
-作者：[待填写] · 发布仓库：[待填写]
+作者：[[AUTHOR]] · 发布仓库：[[REPO_URL]]

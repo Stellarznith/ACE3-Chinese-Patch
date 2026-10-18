@@ -1,0 +1,88 @@
+name: 问题反馈
+description: 报告汉化补丁的显示、卡死、错译等问题
+title: "[问题] "
+labels: ["待分类"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请先读 [项目状态]([[REPO_URL]]/blob/main/docs/00-项目状态.md)，
+        确认不是已知问题。信息不全的报告很难定位，请尽量填完。
+
+        **不要**上传完整游戏、BIOS、密钥，或含个人路径的完整日志。
+
+  - type: input
+    id: patch-version
+    attributes:
+      label: 补丁版本
+      description: 例如 v1.0.0，不要写"最新版"
+      placeholder: v0.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: source-hash
+    attributes:
+      label: 原盘 SHA-256
+      description: 你打补丁前那张日版原盘的 SHA-256
+      placeholder: 64 位十六进制
+    validations:
+      required: false
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 运行环境
+      options:
+        - PCSX2（Windows）
+        - PCSX2（Linux）
+        - PS2 实机
+        - 其他（在下方说明）
+    validations:
+      required: true
+
+  - type: input
+    id: emulator-version
+    attributes:
+      label: 模拟器版本与关键设置
+      description: 例如 PCSX2 2.x，渲染器、BIOS 版本
+      placeholder: PCSX2 2.0 / Vulkan / ...
+    validations:
+      required: false
+
+  - type: input
+    id: location
+    attributes:
+      label: 出问题的位置
+      description: 屏幕名 / 任务名 / 对话上下文
+      placeholder: 例如「第 12 话 战斗结束对话」
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从读档到出问题，一步一步写
+      placeholder: |
+        1. 读取存档 ...
+        2. 进入 ...
+        3. 出现 ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望与实际
+      description: 你预期看到什么，实际看到什么
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图或存档
+      description: 直接拖图进来；如需附即时存档请说明
+    validations:
+      required: false
