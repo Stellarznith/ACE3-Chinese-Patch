@@ -2,25 +2,12 @@
 
 > 每次发 GitHub Release 时复制本页内容，替换 `<...>` 与「待定」，删掉不适用的段落。模板本身不对外发布，也不代表任何版本已经验证。
 
-## 当前版本说明
-
-- 全文本中文化。
-- 部分游戏贴图中文化。
-- 尚未经过 PS2 实机测试。
-- 个别译文受原游戏技术限制，可能不够自然。
-- 仍可能存在未发现的 Bug，欢迎反馈。
-
-**本项目将根据玩家反馈持续完善。**
-
-GitHub Issues：`https://github.com/Stellarznith/ACE3-Chinese-Patch/issues`（仓库建立后生效）
-
----
-
 ## 版本与日期
 
 - 版本：`<vX.Y.Z>`
 - 发布日期：`<YYYY-MM-DD>`
 - 类型：正式版 / 候选版（rc）
+- 一句话概述：全文本中文化，部分贴图中文化，尚未经过 PS2 实机测试。
 
 ## 本版内容
 
@@ -87,12 +74,14 @@ GitHub Issues：`https://github.com/Stellarznith/ACE3-Chinese-Patch/issues`（�
 
 本补丁永久免费，欢迎免费转载与镜像，无需事先申请；严禁转卖、付费解锁或冒充作者。完整条款见仓库 `DISTRIBUTION.md`。
 
+## 项目地址
+
+`https://github.com/Stellarznith/ACE3-Chinese-Patch`（仓库建立后生效）
+
+转载时请保留本地址与版本号，方便玩家查到原始来源与更新。
+
 ## 反馈
 
 请在本仓库 Issues 提交，并附上：问题类型、出现位置、复现步骤、运行环境（PCSX2 版本与关键设置，或实机型号与运行方式）、截图或日志。
 
 **请勿上传完整游戏 ISO、BIOS 等受版权保护的文件。**
-
----
-
-> 附：项目地址 `https://github.com/Stellarznith/ACE3-Chinese-Patch`（仓库建立后生效）
