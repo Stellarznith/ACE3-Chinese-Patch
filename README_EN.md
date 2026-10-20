@@ -12,6 +12,23 @@ This project started with a childhood wish to play *Another Century's Episode 3*
 | Localization by | 伐妹儿 (Fameier) |
 | GitHub | [Stellarznith](https://github.com/Stellarznith) |
 | Project URL (planned) | `https://github.com/Stellarznith/ACE3-Chinese-Patch` (not reachable until the repository exists) |
+| Current version | Not released |
+
+## Release positioning
+
+**First public release · still being improved**
+
+This is a localization that has gone through long-term production and debugging and is shared publicly as a finished fan work, not a temporary test build. Releases do not use labels such as "Beta", "public test build" or "final perfect version": it is neither an internal half-finished package, nor a claim that the work is perfect.
+
+A public release means the work has reached a shareable level of completion. It does not mean zero bugs, and it does not mean every part of the game has been verified. Known limitations at this time:
+
+- Some in-game textures remain untranslated and keep the original Japanese or English artwork.
+- Mistranslations, missing lines or display glitches may still exist.
+- Real PS2 hardware has not been verified yet.
+
+Player testing and feedback are genuinely welcome, and fixes and updates will continue. Versioning plan: the first public release uses `v1.0.0`, later fixes move to `v1.0.1` and so on; the final version number is confirmed at release time.
+
+> Current status remains "work in progress, not released". No version number is claimed until the release is confirmed.
 
 ## Completion status
 
