@@ -1,0 +1,60 @@
+name: 翻译问题
+description: 错译、漏译、用字不当、缺字
+title: "[翻译] "
+labels: ["translation"]
+body:
+  - type: input
+    id: patch_version
+    attributes:
+      label: 补丁版本
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 出现位置
+      description: 任务名、菜单名或画面名
+      placeholder: 第 X 话 简报 / 主菜单 / 事典
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前显示
+      description: 截图或原文抄录
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: 建议译文
+      description: 如受字数限制可给出更短的替代方案
+    validations:
+      required: false
+  - type: textarea
+    id: reason
+    attributes:
+      label: 理由
+      description: 原文含义、术语依据或语感问题
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 错译
+        - 漏译
+        - 术语不一致
+        - 表达不自然
+        - 缺字 / 显示异常
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我已确认该问题不在已知问题清单中
+          required: true

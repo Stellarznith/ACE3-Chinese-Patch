@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2026 [[AUTHOR]]
+Copyright (c) 2026 伐妹儿 (GitHub: Stellarznith)
+
+本许可仅适用于 `installer/` 与 `tools/` 目录下由本项目作者编写的源代码。
+汉化补丁、译文、文档与第三方材料不在本许可范围内，其适用条款见 LICENSE-SCOPE.md、
+DISTRIBUTION.md 与 THIRD_PARTY_NOTICES.md。
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,9 +23,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-适用范围（本仓库）：本许可仅覆盖 `scripts/` 目录下的构建、校验与工具脚本。
-`corpus/` 译文、`docs/` 文档、字形与字库产物不适用本许可，适用
-LICENSE-CC-BY-NC-SA-4.0.txt。两者的分界见 NOTICE。

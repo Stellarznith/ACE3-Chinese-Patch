@@ -1,64 +1,36 @@
-# ============================================================
-#  ACE3 汉化发布仓库 .gitignore
-#  原则：游戏本体、整盘镜像、字体原始文件、实验转储、构建产物
-#        一律不入库；只入库脚本、译文、映射表、文档、校验清单。
-# ============================================================
-
-# --- 游戏镜像与提取物（绝对不入库）---
+# 构建产物与发行二进制
 *.iso
-*.ISO
 *.bin
-*.BIN
-*.chd
-*.cso
-*.zso
-*.img
-extracted/
-extract/
-rom/
-
-# --- 字体原始文件（不随仓库/发行包分发）---
-*.otf
-*.ttf
-*.ttc
-*.OTF
-fonts/
-
-# --- 构建与产物 ---
-build/
-out/
-dist/
 *.xdelta
 *.xdelta3
-*.diff
-patches/*.xdelta
-!patches/README.md
-
-# --- 字库实验中间件 ---
-*.npy
-*.npz
-*.gs
-*.gs.zst
-*.p2s
-*.dump
-*.tmp
-*.bak
-
-# --- Python ---
-*.pyc
-__pycache__/
-.pytest_cache/
-.venv/
-venv/
-
-# --- 压缩包（Release 资产走 GitHub Releases，不入库）---
 *.zip
 *.7z
 *.rar
+*.exe
+*.dll
+*.pdb
 
-# --- 编辑器 / 系统 ---
+# 本地构建与临时目录
+build/
+dist/
+out/
+tmp/
+tmp_*/
+cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# 日志与校验产物的本地副本
+*.log
+SHA256SUMS.local.txt
+
+# 编辑器与系统
 .vscode/
 .idea/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# 本地工具（便携版 Git 等）
+tools/git/

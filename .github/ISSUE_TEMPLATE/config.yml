@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安装说明
+    url: https://github.com/Stellarznith/ACE3-Chinese-Patch/blob/main/docs/INSTALL.md
+    about: 先看安装步骤与常见失败原因
+  - name: 常见问题
+    url: https://github.com/Stellarznith/ACE3-Chinese-Patch/blob/main/docs/FAQ.md
+    about: 收费、版本、存档等常见疑问
