@@ -40,11 +40,23 @@ GitHub Issues：`https://github.com/Stellarznith/ACE3-Chinese-Patch/issues`（�
 |---|---|
 | `ACE3_CN_Patcher.exe` | Windows 图形化安装器 |
 | `ACE3_CN_<版本>.xdelta` | 差分补丁 |
+| `patch_manifest.json` | 补丁清单：类型、目标版本、输入/输出哈希 |
 | `使用说明.txt` | 安装步骤与常见错误 |
 | `SHA256SUMS.txt` | 发行包内文件的校验值 |
 | `THIRD_PARTY_NOTICES.txt` | 第三方组件与许可说明 |
 
 补丁文件 SHA-256：`待定`
+
+## 补丁类型
+
+| 类型 | 输入 | 说明 |
+|---|---|---|
+| Full 完整补丁 | 日版原版 ISO | 从零生成完整汉化版，适用首次安装 |
+| Update 增量补丁 | 已安装的旧版汉化 ISO | 只升级到新版本，体积更小 |
+
+本次发行包包含：`Full` / `Update`（删去不适用的一项）。
+
+> 增量补丁只有在真实生成并验证通过后才会发布；未生成时，Release 说明中不出现 Update 包，也不宣称增量更新可用。
 
 ## 安装方法
 

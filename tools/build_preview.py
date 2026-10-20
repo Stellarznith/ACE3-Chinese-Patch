@@ -53,6 +53,9 @@ def inline(text: str, current_dir: Path | None = None) -> str:
         label, target = match.group(1), match.group(2)
         if target.startswith(("http://", "https://", "mailto:")):
             return f'<a href="{target}" target="_blank" rel="noreferrer">{label}</a>'
+        head = target.split("#", 1)[0]
+        if head.endswith(".md") and Path(head).name in ANCHORS:
+            return f'<a href="#{ANCHORS[Path(head).name]}">{label}</a>'
         return f'<span class="xlink" title="{target}">{label}</span>'
 
     return LINK.sub(repl, text)
@@ -60,6 +63,9 @@ def inline(text: str, current_dir: Path | None = None) -> str:
 
 def slug(path: str) -> str:
     return "doc-" + re.sub(r"[^a-z0-9]+", "-", path.lower()).strip("-")
+
+
+ANCHORS = {Path(p).name: slug(p) for p, _ in DOCS}
 
 
 def render(md: str) -> str:
