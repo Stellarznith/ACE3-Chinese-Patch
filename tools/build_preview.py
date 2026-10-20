@@ -33,6 +33,7 @@ DOCS = [
     ("docs/VERIFICATION.md", "验证记录"),
     ("docs/TEST_REPORT.md", "测试报告"),
     ("docs/CREDITS.md", "制作与致谢"),
+    ("docs/RELEASE_TEMPLATE.md", "发布说明模板"),
     ("installer/README.md", "安装器"),
     ("tools/README.md", "工具"),
 ]
@@ -65,7 +66,7 @@ def render(md: str) -> str:
     lines = md.splitlines()
     out: list[str] = []
     i = 0
-    in_list = False
+    list_tag = ""
     while i < len(lines):
         line = lines[i]
         stripped = line.strip()
@@ -116,9 +117,9 @@ def render(md: str) -> str:
 
         m = re.match(r"^[-*]\s+\[( |x|X)\]\s+(.*)$", stripped)
         if m:
-            if not in_list:
+            if not list_tag:
                 out.append('<ul class="check">')
-                in_list = True
+                list_tag = "ul"
             mark = "checked" if m.group(1).lower() == "x" else ""
             out.append(f'<li><input type="checkbox" disabled {mark}> {inline(m.group(2))}</li>')
             i += 1
@@ -126,29 +127,32 @@ def render(md: str) -> str:
 
         m = re.match(r"^[-*]\s+(.*)$", stripped)
         if m:
-            if not in_list:
+            if not list_tag:
                 out.append("<ul>")
-                in_list = True
+                list_tag = "ul"
             out.append(f"<li>{inline(m.group(1))}</li>")
             i += 1
             continue
 
         m = re.match(r"^\d+\.\s+(.*)$", stripped)
         if m:
-            if not in_list:
+            if not list_tag:
                 out.append("<ol>")
-                in_list = True
+                list_tag = "ol"
             out.append(f"<li>{inline(m.group(1))}</li>")
             i += 1
             continue
 
-        if in_list:
-            out.append("</ul>" if out and out[-1].startswith("<li>") else "</ol>")
-            in_list = False
-
         if not stripped:
+            if list_tag:
+                out.append(f"</{list_tag}>")
+                list_tag = ""
             i += 1
             continue
+
+        if list_tag:
+            out.append(f"</{list_tag}>")
+            list_tag = ""
 
         para = [stripped]
         i += 1
@@ -157,8 +161,8 @@ def render(md: str) -> str:
             i += 1
         out.append("<p>" + inline(" ".join(para)) + "</p>")
 
-    if in_list:
-        out.append("</ul>")
+    if list_tag:
+        out.append(f"</{list_tag}>")
     return "\n".join(out)
 
 

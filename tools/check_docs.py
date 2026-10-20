@@ -85,15 +85,16 @@ def check_binaries(files: list[Path]) -> list[str]:
 
 
 def count_pending(files: list[Path]) -> tuple[int, list[str]]:
-    hits = []
+    counts: list[tuple[str, int]] = []
     for path in files:
         if path.suffix.lower() != ".md":
             continue
         text = path.read_text(encoding="utf-8")
         n = text.count("待定")
         if n:
-            hits.append(f"{path.relative_to(ROOT)}: {n} 处待定")
-    return sum(len(h) for h in hits), hits
+            counts.append((str(path.relative_to(ROOT)), n))
+    hits = [f"{name}: {n} 处待定" for name, n in counts]
+    return sum(n for _, n in counts), hits
 
 
 def main() -> int:
