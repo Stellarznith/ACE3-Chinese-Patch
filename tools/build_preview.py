@@ -218,7 +218,7 @@ def build(out: Path) -> Path:
         + "</main></div><footer>本页由 tools/build_preview.py 生成，用于检查文档排版；不代表已发布。</footer></body></html>"
     )
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page, encoding="utf-8")
+    out.write_text(page, encoding="utf-8", newline="\n")
     return out
 
 
