@@ -57,11 +57,21 @@
 
 | 工具 | 用途 | 许可 | 是否随包分发 |
 |---|---|---|---|
-| PySide6 / Qt 6.12.0 | 图形界面 | **LGPL-3.0**（Qt 公司双许可中的开源一侧） | 仅在打包 EXE 时分发（`_internal/PySide6/`） |
-| Pillow（PIL） | 图像与图标处理 | MIT-CMU（HPND 式） | 仅在打包 EXE 时分发 |
-| NumPy | 数值计算 | BSD-3-Clause | 仅在打包 EXE 时分发 |
+| PySide6 / Qt 6.12.0 | 图形界面 | **LGPL-3.0**（Qt 公司双许可中的开源一侧） | 是：工坊发行包 `ACE3_Workshop_v1.0.4.zip` 的 `_internal/PySide6/` 与 `_internal/shiboken6/` |
+| Pillow（PIL） | 图像与图标处理 | MIT-CMU（HPND 式） | 同上，`_internal/PIL/` |
+| NumPy 2.3.5 | 数值计算 | BSD-3-Clause | 同上，`_internal/numpy/`（包内自带 `numpy-2.3.5.dist-info/LICENSE.txt`） |
+| psutil | 进程与系统信息 | BSD-3-Clause | 同上，`_internal/psutil/` |
+| PyYAML | YAML 解析 | MIT | 同上，`_internal/yaml/` |
+| charset-normalizer | 字符编码识别 | MIT | 同上，`_internal/charset_normalizer/` |
 
 关于 PySide6 的说明：工坊以**动态链接**方式使用 PySide6/Qt（打包后为同目录下的独立 DLL），未修改 Qt 源码。若分发打包好的工坊 EXE，按 LGPL-3.0 需附许可文本、声明所用版本，并保持用户可用自己的兼容 Qt 库替换——PyInstaller 的一目录（`_internal/`）布局本身满足可替换性。源码形式分发时（本仓库即此形态）不产生额外义务。
+
+许可履行方式（已按实际选择执行）：`ACE3_Workshop_v1.0.4.zip` 内附 `LICENSES/` 目录，含 `LICENSE-Python-3.12.txt`、`LGPL-3.0.txt`、`GPL-3.0.txt`、`LICENSE-Pillow.txt`、`LICENSE-NumPy.txt`、`LICENSE-psutil.txt`、`LICENSE-PyYAML.txt`、`LICENSE-charset-normalizer.txt` 与一份中文 `README.txt` 说明。打包产物本身只保留了 NumPy 的 dist-info，其余组件的许可全文由该目录补齐。
+
+版本判定依据：`_internal/PySide6/Qt6Core.dll` 的文件版本资源为 `6.12.0.0`（ProductName=`Qt6`）；`numpy-2.3.5.dist-info` 目录名给出 NumPy 版本。Pillow、psutil、PyYAML、charset-normalizer 在打包产物内未保留可读版本资源或 dist-info，本页不写推测版本号。
+
+注：psutil、PyYAML、charset-normalizer 在 `workshop/` 源码中没有被直接 import，是打包闭包连带收进的运行时依赖；既然随包分发，一并附许可。
+
 
 ### 3.3 仅开发期使用、不随包分发
 

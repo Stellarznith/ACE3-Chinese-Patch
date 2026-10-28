@@ -74,11 +74,16 @@ PS2 日版 **SLPS-25784** 的非官方简体中文汉化。本项目由个人爱
 - 汉化补丁 `ACE3_CN_v1.0.0_full.xdelta`（差分文件，由日版原版 ISO 生成）
 - 补丁清单 `ACE3_CN_v1.0.0_full.json`（安装器据此校验原版与成品指纹）
 - Windows 图形化安装器 `ACE3_CN_Patcher.zip`（解压即用，内含 xdelta3）
+- ACE3 汉化工坊 v1.0.4 可执行发行包 `ACE3_Workshop_v1.0.4.zip`（留档与核对用，v1.0.0 阶段不能独立运行，见下）
 - xdelta3 命令行工具 `xdelta3.exe` / `xdelta3decode.exe`（供手动打补丁与自检）
 - 发行记录 `patch_manifest.json`（构建方式、差异审计、还原验证的完整记录）
 - `LICENSE-xdelta3.txt` / `NOTICE-xdelta3.txt`（第三方工具的许可与来源）
 - `SHA256SUMS.txt` 校验清单
 - 使用说明 `ACE3_CN_v1.0.0_readme.txt`（附件标签为「使用说明.txt」）
+
+`SHA256SUMS.txt` 覆盖上述 8 个散件与 2 个发行包 ZIP，共 10 条，不含它自身。
+
+工坊发行包内含 `ACE3汉化工坊.exe`（5,776,792 字节，MD5 `9a65e1645ae992f4bc9e221dc15a3c74`）、`_internal/` 运行时依赖与 `LICENSES/` 第三方许可目录，共 205 个文件。它运行时需要读取汉化工程内部的只读数据（索引库、码表、字体缓存），这部分 v1.0.0 暂不公开，所以**下载后不能直接使用**；提供它是为了留档与核对，程序本体、依赖与许可均可验证，源码在[汉化工坊源码](workshop/)。
 
 发布包内容与校验值以 Release 页面为准；本仓库不提交补丁与安装器二进制。每次发布时，Release 说明按[发布说明模板](docs/RELEASE_TEMPLATE.md)填写。
 

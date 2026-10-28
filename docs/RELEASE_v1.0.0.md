@@ -38,15 +38,23 @@
 | `ACE3_CN_v1.0.0_full.xdelta` | 426,654,389 | `74944d8127bc9c02e863a813f22da089dc508f8df4c2bb53bf397e1e314a2acd` | 差分补丁（完整补丁，由日版原版生成） |
 | `ACE3_CN_v1.0.0_full.json` | 776 | `e022774577e3c898fb433c44dfd9d6804e96dfd702414eeae1dfcc99cf7032aa` | 补丁清单：输入/输出指纹、补丁自身指纹 |
 | `ACE3_CN_Patcher.zip` | 11,682,160 | `383cf7c90a7b6bdb10b84fd1b454ce75b08cd96beed0ce219ff50d001a8a0e92` | Windows 图形化安装器（解压即用，含 xdelta3） |
-| `patch_manifest.json` | 7,065 | `01f9742763ccbacca0802cd6a18512602ad5dcba5e8bcb5f6a979282ad8835ac` | 本次发行的详细记录（构建方式、差异审计、还原验证） |
+| `ACE3_Workshop_v1.0.4.zip` | 57,946,402 | `e1957bddc51c19493b8e5ac0799ce9b0de62621df9dedadbb7a3ede15d1bfb60` | ACE3 汉化工坊 v1.0.4 可执行发行包（见下节说明，v1.0.0 阶段不能独立运行） |
+| `patch_manifest.json` | 8,274 | `5889aa627adc8b8f7c2c5d3117fd6e08ea5b7610538c015522e882c99b9fb383` | 本次发行的详细记录（构建方式、差异审计、还原验证、附件清单） |
 | `xdelta3.exe` | 340,992 | `732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9` | 命令行补丁工具（3.2.2，Apache-2.0） |
 | `xdelta3decode.exe` | 48,128 | `67f84255bd009a65b1252784f8b3ebc72b5907766bc366c571e8b85fa7002a06` | 只解码构建，用于交叉验证 |
 | `LICENSE-xdelta3.txt` | 9,156 | `6cf63d87586c7c25c3ab8e62eef5c75bbaa982b0a6f9c00c59e2720255aac9ec` | xdelta3 的 Apache-2.0 许可全文 |
 | `NOTICE-xdelta3.txt` | 929 | `1f3062dda7f369a5da75ad59972f512b3a06c358d3570cc825ca2b06c44a13ed` | xdelta3 来源、上游资产哈希与二进制哈希 |
-| `SHA256SUMS.txt` | 686 | — | 上述 8 个文件的校验值（不含自身） |
+| `SHA256SUMS.txt` | 863 | `6d345ff917ff45282063fbd972d455c862490afde336acb0034ad99dffa86384` | 上述 8 个文件 + 2 个发行包 ZIP 的校验值（不含自身） |
 | `使用说明.txt` | 6,966 | `0094315cdcd03b5b537d4ccc5acdbdbd314adc54b940e9a960b5294c21c51574` | 安装步骤与常见错误（附件文件名为 `ACE3_CN_v1.0.0_readme.txt`，标签显示为「使用说明.txt」） |
 
-`SHA256SUMS.txt` 覆盖上表中除它自身与 `ACE3_CN_Patcher.zip` 之外的 8 个文件；这 8 条在打包后逐条重算核对，全部一致。`ACE3_CN_Patcher.zip` 的哈希只在本页与 Release 页面给出（安装器包内自带 `release_manifest.schema.json` 与协议说明，不参与补丁校验链）。
+`SHA256SUMS.txt` 覆盖上表中除它自身之外的 10 个文件（含 `ACE3_CN_Patcher.zip` 与 `ACE3_Workshop_v1.0.4.zip` 两个发行包），这些条目在打包后逐条重算核对，全部一致。
+
+### 关于 `ACE3_Workshop_v1.0.4.zip`
+
+这是 ACE3 汉化工坊 v1.0.4 的可执行发行包，内含 `ACE3汉化工坊.exe`（5,776,792 字节，MD5 `9a65e1645ae992f4bc9e221dc15a3c74`）、`_internal/` 运行时依赖、`使用说明.txt`、`ace3_root.txt` 与 `LICENSES/` 第三方许可目录，共 205 个文件。
+
+**它在 v1.0.0 阶段不能独立运行**：工坊运行时需要读取「工程根」下的只读数据（索引库、码表、字体缓存），这部分属于汉化工程内部资料，v1.0.0 暂不公开。提供这个包的目的是留档与核对——程序本体、依赖、许可都可验证，源码在仓库 `workshop/` 目录（MIT）。这一点在包内 `LICENSES/README.txt` 与 `使用说明.txt` 里都写明了，不作「下载即可用」的表述。
+
 
 补丁为单文件 xdelta3（3.2.2），426,654,389 字节，低于 GitHub Releases 单文件 2 GB 上限，**不分卷**，因此没有分卷合并步骤。
 

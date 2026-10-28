@@ -49,7 +49,7 @@ This is a personal project with limited test environments and playthrough covera
 
 ## Download
 
-Releases provide the xdelta patch, its JSON manifest, the Windows installer, the xdelta3 command-line tools and `SHA256SUMS.txt`. Release notes follow [docs/RELEASE_TEMPLATE.md](docs/RELEASE_TEMPLATE.md).
+Releases provide the xdelta patch, its JSON manifest, the Windows installer, the ACE3 Workshop executable package, the xdelta3 command-line tools and `SHA256SUMS.txt`. `SHA256SUMS.txt` covers eight loose files plus the two distribution ZIPs (ten entries, excluding itself). The Workshop package is archived for inspection: it needs read-only project data that is not public in v1.0.0, so it does not run standalone yet; its source is in [workshop/](workshop/). Release notes follow [docs/RELEASE_TEMPLATE.md](docs/RELEASE_TEMPLATE.md).
 
 ## What this is
 
