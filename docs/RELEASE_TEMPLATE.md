@@ -39,7 +39,7 @@
 | `xdelta3.exe` / `xdelta3decode.exe` | 340,992 / 48,128 | 命令行补丁工具（手动安装与交叉验证） |
 | `LICENSE-xdelta3.txt` / `NOTICE-xdelta3.txt` | 9,156 / 929 | 第三方工具的许可全文与来源声明 |
 | `SHA256SUMS.txt` | 686 | 发行包内文件的校验值 |
-| `使用说明.txt` | 6,966 | 安装步骤与常见错误 |
+| `使用说明.txt` | 6,966 | 安装步骤与常见错误（附件文件名为 `ACE3_CN_v1.0.0_readme.txt`，标签显示为「使用说明.txt」） |
 
 补丁文件 SHA-256：`74944d8127bc9c02e863a813f22da089dc508f8df4c2bb53bf397e1e314a2acd`（426,654,389 字节）
 

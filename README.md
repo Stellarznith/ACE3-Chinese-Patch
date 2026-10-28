@@ -78,7 +78,7 @@ PS2 日版 **SLPS-25784** 的非官方简体中文汉化。本项目由个人爱
 - 发行记录 `patch_manifest.json`（构建方式、差异审计、还原验证的完整记录）
 - `LICENSE-xdelta3.txt` / `NOTICE-xdelta3.txt`（第三方工具的许可与来源）
 - `SHA256SUMS.txt` 校验清单
-- `使用说明.txt`
+- 使用说明 `ACE3_CN_v1.0.0_readme.txt`（附件标签为「使用说明.txt」）
 
 发布包内容与校验值以 Release 页面为准；本仓库不提交补丁与安装器二进制。每次发布时，Release 说明按[发布说明模板](docs/RELEASE_TEMPLATE.md)填写。
 

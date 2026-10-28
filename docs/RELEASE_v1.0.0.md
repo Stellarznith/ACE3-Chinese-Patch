@@ -44,7 +44,7 @@
 | `LICENSE-xdelta3.txt` | 9,156 | `6cf63d87586c7c25c3ab8e62eef5c75bbaa982b0a6f9c00c59e2720255aac9ec` | xdelta3 的 Apache-2.0 许可全文 |
 | `NOTICE-xdelta3.txt` | 929 | `1f3062dda7f369a5da75ad59972f512b3a06c358d3570cc825ca2b06c44a13ed` | xdelta3 来源、上游资产哈希与二进制哈希 |
 | `SHA256SUMS.txt` | 686 | — | 上述 8 个文件的校验值（不含自身） |
-| `使用说明.txt` | 6,966 | `0094315cdcd03b5b537d4ccc5acdbdbd314adc54b940e9a960b5294c21c51574` | 安装步骤与常见错误 |
+| `使用说明.txt` | 6,966 | `0094315cdcd03b5b537d4ccc5acdbdbd314adc54b940e9a960b5294c21c51574` | 安装步骤与常见错误（附件文件名为 `ACE3_CN_v1.0.0_readme.txt`，标签显示为「使用说明.txt」） |
 
 `SHA256SUMS.txt` 覆盖上表中除它自身与 `ACE3_CN_Patcher.zip` 之外的 8 个文件；这 8 条在打包后逐条重算核对，全部一致。`ACE3_CN_Patcher.zip` 的哈希只在本页与 Release 页面给出（安装器包内自带 `release_manifest.schema.json` 与协议说明，不参与补丁校验链）。
 
