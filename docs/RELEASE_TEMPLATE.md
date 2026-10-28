@@ -30,14 +30,16 @@
 
 ## 发行包内容
 
-| 文件 | 说明 |
-|---|---|
-| `ACE3_CN_Patcher.zip` | Windows 图形化安装器（解压后含 `ACE3_CN_Patcher.exe`、`使用说明.txt`、xdelta3、许可与协议文件） |
-| `ACE3_CN_v1.0.0_full.xdelta` | 差分补丁（完整补丁，由日版原版生成） |
-| `ACE3_CN_v1.0.0_full.json` | 补丁清单：类型、输入/输出指纹、补丁自身指纹 |
-| `xdelta3.exe` / `xdelta3decode.exe` | 命令行补丁工具（手动安装与交叉验证） |
-| `SHA256SUMS.txt` | 发行包内文件的校验值 |
-| `使用说明.txt` | 安装步骤与常见错误 |
+| 文件 | 大小（字节） | 说明 |
+|---|---|---|
+| `ACE3_CN_Patcher.zip` | 11,682,160 | Windows 图形化安装器（解压后含 `ACE3_CN_Patcher.exe`、许可与协议文件、xdelta3） |
+| `ACE3_CN_v1.0.0_full.xdelta` | 426,654,389 | 差分补丁（完整补丁，由日版原版生成） |
+| `ACE3_CN_v1.0.0_full.json` | 776 | 补丁清单：类型、输入/输出指纹、补丁自身指纹 |
+| `patch_manifest.json` | 7,065 | 发行记录：构建方式、差异审计、结构审计、还原验证 |
+| `xdelta3.exe` / `xdelta3decode.exe` | 340,992 / 48,128 | 命令行补丁工具（手动安装与交叉验证） |
+| `LICENSE-xdelta3.txt` / `NOTICE-xdelta3.txt` | 9,156 / 929 | 第三方工具的许可全文与来源声明 |
+| `SHA256SUMS.txt` | 686 | 发行包内文件的校验值 |
+| `使用说明.txt` | 6,966 | 安装步骤与常见错误 |
 
 补丁文件 SHA-256：`74944d8127bc9c02e863a813f22da089dc508f8df4c2bb53bf397e1e314a2acd`（426,654,389 字节）
 

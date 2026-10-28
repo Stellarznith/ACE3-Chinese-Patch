@@ -73,8 +73,10 @@ PS2 日版 **SLPS-25784** 的非官方简体中文汉化。本项目由个人爱
 
 - 汉化补丁 `ACE3_CN_v1.0.0_full.xdelta`（差分文件，由日版原版 ISO 生成）
 - 补丁清单 `ACE3_CN_v1.0.0_full.json`（安装器据此校验原版与成品指纹）
-- Windows 图形化安装器 `ACE3_CN_Patcher.zip`
+- Windows 图形化安装器 `ACE3_CN_Patcher.zip`（解压即用，内含 xdelta3）
 - xdelta3 命令行工具 `xdelta3.exe` / `xdelta3decode.exe`（供手动打补丁与自检）
+- 发行记录 `patch_manifest.json`（构建方式、差异审计、还原验证的完整记录）
+- `LICENSE-xdelta3.txt` / `NOTICE-xdelta3.txt`（第三方工具的许可与来源）
 - `SHA256SUMS.txt` 校验清单
 - `使用说明.txt`
 
