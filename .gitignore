@@ -1,4 +1,4 @@
-# 鏋勫缓浜х墿涓庡彂琛屼簩杩涘埗
+# 构建产物与发行二进制
 *.iso
 *.bin
 *.xdelta
@@ -10,7 +10,11 @@
 *.dll
 *.pdb
 
-# 鏈湴鏋勫缓涓庝复鏃剁洰褰?build/
+# 例外：随安装器源码一并发布的、经核验的第三方命令行工具
+!installer/third_party/xdelta3-3.2.2/*.exe
+
+# 本地构建与临时目录
+build/
 dist/
 out/
 tmp/
@@ -20,20 +24,19 @@ __pycache__/
 *.pyc
 *.pyo
 
-# 鏃ュ織涓庢牎楠屼骇鐗╃殑鏈湴鍓湰
+# 日志与校验产物的本地副本
 *.log
 SHA256SUMS.local.txt
 
-# 缂栬緫鍣ㄤ笌绯荤粺
+# 编辑器与系统
 .vscode/
 .idea/
 Thumbs.db
 desktop.ini
 .DS_Store
 
-# 鏈湴宸ュ叿锛堜究鎼虹増 Git 绛夛級
+# 本地工具（便携版 Git 等）
 tools/git/
 
 # 本地预览产物
 .preview/
-

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ace3-cn:release-manifest:schema:v1",
+  "title": "ACE3 release_manifest.json v1",
+  "description": "Strict metadata for a standalone xdelta3 patch and its exact source and target ISO images.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "patch_type", "source", "target", "patch"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "patch_type": {"type": "string", "enum": ["FULL", "UPDATE"]},
+    "source": {"$ref": "#/$defs/iso"},
+    "target": {"$ref": "#/$defs/iso"},
+    "patch": {"$ref": "#/$defs/patch"}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "iso": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "iso_size_bytes", "iso_sha256"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "iso_size_bytes": {"type": "integer", "minimum": 1},
+        "iso_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "patch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filename", "size_bytes", "sha256", "format", "format_version"],
+      "properties": {
+        "filename": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*\\.xdelta(?![\\s\\S])"
+        },
+        "size_bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "format": {"type": "string", "const": "xdelta3"},
+        "format_version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Version of the Xdelta3 encoder that generated this patch; descriptive metadata only, not an inference of file-format compatibility."
+        }
+      }
+    }
+  }
+}

@@ -16,10 +16,15 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "build", "dist", "out", "tmp"}
+SKIP_DIRS = {".git", "build", "dist", "out", "tmp", "__pycache__", ".preview"}
 LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 ABS_PATH_RE = re.compile(r"[A-Za-z]:\\\\(?:CODEX|Users|Windows)|/mnt/[a-z]/")
 BINARY_SUFFIXES = {".iso", ".bin", ".xdelta", ".exe", ".dll", ".zip", ".7z"}
+# 随源码一并发布的第三方命令行工具：体积小、经核验、许可允许再分发，属仓库内容而非构建产物
+BINARY_ALLOWLIST = {
+    Path("installer/third_party/xdelta3-3.2.2/xdelta3.exe"),
+    Path("installer/third_party/xdelta3-3.2.2/xdelta3decode.exe"),
+}
 
 
 def iter_files() -> list[Path]:
@@ -77,11 +82,15 @@ def check_leaks(files: list[Path]) -> list[str]:
 
 
 def check_binaries(files: list[Path]) -> list[str]:
-    return [
-        f"{path.relative_to(ROOT)}: 不应提交的二进制"
-        for path in files
-        if path.suffix.lower() in BINARY_SUFFIXES
-    ]
+    problems = []
+    for path in files:
+        if path.suffix.lower() not in BINARY_SUFFIXES:
+            continue
+        rel = path.relative_to(ROOT)
+        if rel in BINARY_ALLOWLIST:
+            continue
+        problems.append(f"{rel}: 不应提交的二进制")
+    return problems
 
 
 def count_pending(files: list[Path]) -> tuple[int, list[str]]:

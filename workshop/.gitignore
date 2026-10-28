@@ -1,0 +1,11 @@
+# 工坊运行时产物（core/env.py 启动时会建这些目录）
+work/
+
+# Python 字节码
+__pycache__/
+*.pyc
+*.pyo
+
+# 打包产物
+build/
+dist/

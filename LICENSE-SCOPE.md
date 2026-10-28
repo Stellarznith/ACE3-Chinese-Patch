@@ -4,7 +4,8 @@
 
 | 内容 | 位置 / 载体 | 适用条款 | 要点 |
 |---|---|---|---|
-| 安装器源码 | `installer/src/` | MIT（[LICENSE](LICENSE)） | 允许使用、修改、再分发、商业使用，需保留版权与许可声明 |
+| 安装器源码 | `installer/` | MIT（[LICENSE](LICENSE)） | 允许使用、修改、再分发、商业使用，需保留版权与许可声明 |
+| 汉化工坊源码 | `workshop/` | MIT（[LICENSE](LICENSE)） | 同上 |
 | 工具源码 | `tools/` | MIT（[LICENSE](LICENSE)） | 同上 |
 | 由上述源码构建的程序 | 发行包内 `ACE3_CN_Patcher.exe` 等 | MIT | 与源码同一条款，不因打包进 Release 而改变 |
 | 汉化补丁数据 | Release 内 `*.xdelta` | [转载与分发政策](DISTRIBUTION.md) | 允许免费转载原版发行包；禁止转卖、付费解锁、冒充作者 |

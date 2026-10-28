@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "patch_type": "UPDATE",
+  "source": {
+    "version": "TEST-ONLY ACE3-CN-1.0.0",
+    "iso_size_bytes": 456,
+    "iso_sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
+  },
+  "target": {
+    "version": "TEST-ONLY ACE3-CN-1.0.1",
+    "iso_size_bytes": 457,
+    "iso_sha256": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+  },
+  "patch": {
+    "filename": "ACE3_CN_v1.0.0_to_v1.0.1_update.xdelta",
+    "size_bytes": 321,
+    "sha256": "9876543210abcdef9876543210abcdef9876543210abcdef9876543210abcdef",
+    "format": "xdelta3",
+    "format_version": "3.1.0 encoder"
+  }
+}

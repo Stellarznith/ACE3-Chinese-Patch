@@ -1,0 +1,21 @@
+Xdelta3 Windows x86_64 executables
+
+Upstream project: https://github.com/jmacd/xdelta
+Release tag: v3.2.2
+Release page: https://github.com/jmacd/xdelta/releases/tag/v3.2.2
+Release asset: xdelta3-3.2.2-windows-x86_64.zip
+Asset SHA-256: d48f7651d86b78fdca397057b46601f89131f37219675df736db70af44ec3379
+
+The upstream README identifies the Xdelta 3.2.x series as Apache License 2.0.
+The corresponding upstream license text is included as LICENSE-xdelta3.txt.
+The executable files are unmodified copies from the release archive.
+
+SHA-256 of xdelta3.exe:
+732980d52f9220dc81817ccdd0c295eadce8a0048a24c2a771a73f791ac824e9
+
+SHA-256 of xdelta3decode.exe:
+67f84255bd009a65b1252784f8b3ebc72b5907766bc366c571e8b85fa7002a06
+
+Version banner verified from both executables: Xdelta version 3.2.2
+The encoder/decoder pair passed tests using -S none. No claim is made about
+compatibility with other encoders, decoders, or arbitrary xdelta streams.
